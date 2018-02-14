@@ -1,4 +1,4 @@
-import { ADD_TODO, EDIT_INPUT, REMOVE_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER } from '../constants/input';
+import { ADD_TODO, EDIT_INPUT, REMOVE_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER } from '../constants/input'
 
 let nextTodo = 0
 

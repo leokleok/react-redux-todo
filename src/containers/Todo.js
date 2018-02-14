@@ -3,11 +3,15 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+// components
 import TodoList from '../components/TodoList'
 import TodoFilter from '../components/TodoFilter'
 import TodoCount from '../components/TodoCount'
 
+// actions
 import { addTodo, editInput, removeTodo, completeTodo, setVisibilityFilter } from '../actions/todoActions'
+
+// constants
 import { SHOW_ACTIVE, SHOW_COMPLETED } from '../constants/input'
 
 import styled from 'styled-components'
@@ -25,6 +29,7 @@ const Button = styled.button`
   padding: 1rem;
   font-size: 1rem;
 `
+
 class Todo extends Component {
   sumCompletedItem = todos => todos.filter(todo => todo.get('completed')).size
 
@@ -66,16 +71,17 @@ class Todo extends Component {
   }
 }
 
-const mapStateToProps = state => ({state})
+const mapStateToProps = state => ({state: state})
 
 const mapDispatchToProps = dispatch => ({
-  addTodo: bindActionCreators(addTodo, dispatch),
+  addTodo: bindActionCreators(addTodo, dispatch), // () => dispatch(addTodo)
   editInput: bindActionCreators(editInput, dispatch),
   removeTodo: bindActionCreators(removeTodo, dispatch),
   completeTodo: bindActionCreators(completeTodo, dispatch),
   setVisibilityFilter: bindActionCreators(setVisibilityFilter, dispatch)
 })
 
+// connect is a function that calls mapStateToProps() and mapDispatchToProps()
 export default connect(mapStateToProps, mapDispatchToProps)(Todo)
 
 // const connect = (mapStateToProps, mapDispatchToProps) => Todo => {

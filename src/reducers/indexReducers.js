@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
-import todos from './todoReducer';
-import input from './textReducer';
-import visibilityFilter from './visibilityReducer';
+import { combineReducers } from 'redux'
+import todos from './todoReducer'
+import input from './textReducer'
+import visibilityFilter from './visibilityReducer'
 
 const todoApp = combineReducers({
   todos,
@@ -9,4 +9,4 @@ const todoApp = combineReducers({
   visibilityFilter
 })
 
-export default todoApp;
+export default todoApp
